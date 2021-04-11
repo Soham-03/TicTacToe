@@ -18,29 +18,20 @@ class MainActivity : AppCompatActivity() {
     lateinit var button6:ImageView
     lateinit var button7:ImageView
     lateinit var button8:ImageView
-    lateinit var buttonBottomLeft: ImageView
-    lateinit var op:ImageView
-    lateinit var buttonBottomRight: ImageView
-    var flag: Int = 0
-    var activePlayer = 0 // o = X and 1 = O
-    var gameState = 2
-    var winConditions = arrayOf(arrayOf(0,1,2))
-    var winCheck = arrayOf(2,2,2,2,2,2,2,2,2)
-    var count  = 0
-    var loss = true
     lateinit var player1Name: String
     lateinit var player2Name: String
     lateinit var winnerMp: MediaPlayer
     lateinit var drawMp: MediaPlayer
     lateinit var tapXMp: MediaPlayer
     lateinit var tapYMP: MediaPlayer
+    var activePlayer = 0 // o = X and 1 = O
+    var gameState = 2
+    var winCheck = arrayOf(2,2,2,2,2,2,2,2,2)
+    var count  = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        flag = 1
-
 
         button0 = findViewById(R.id.button0)
         button1 = findViewById(R.id.button1)
@@ -51,8 +42,6 @@ class MainActivity : AppCompatActivity() {
         button6 = findViewById(R.id.button6)
         button7 = findViewById(R.id.button7)
         button8 = findViewById(R.id.button8)
-//        buttonBottomLeft = findViewById(R.id.buttonBottomLeft)
-//        buttonBottomRight = findViewById(R.id.buttonBottomRight)
 
         val intent = intent
         player1Name = intent.getStringExtra("player1")!!
@@ -136,7 +125,9 @@ class MainActivity : AppCompatActivity() {
                 .onNegative("Quit",R.drawable.quit_button_background,R.color.red,
                     {finish()})
                 .position(AwesomeDialog.POSITIONS.CENTER)
+            dialog.setCancelable(false)
             dialog.show()
+
         }
     }
 
@@ -162,6 +153,7 @@ class MainActivity : AppCompatActivity() {
                 .onNegative("Quit",R.drawable.quit_button_background,R.color.red,
                     {finish()})
                 .position(AwesomeDialog.POSITIONS.CENTER)
+            dialog.setCancelable(false)
             dialog.show()
 
             Toast.makeText(this,"Congratulations",Toast.LENGTH_SHORT).show()
@@ -188,6 +180,7 @@ class MainActivity : AppCompatActivity() {
                 .onNegative("Quit",R.drawable.quit_button_background,R.color.red,
                     {finish()})
                 .position(AwesomeDialog.POSITIONS.CENTER)
+            dialog.setCancelable(false)
             dialog.show()
 
             Toast.makeText(this,"Congratulations",Toast.LENGTH_SHORT).show()

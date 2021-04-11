@@ -15,7 +15,7 @@ class launch_activity : AppCompatActivity() {
     lateinit var player2Name: EditText
     lateinit var start: Button
     lateinit var exit: Button
-    lateinit var op:Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate(savedInstanceState)
