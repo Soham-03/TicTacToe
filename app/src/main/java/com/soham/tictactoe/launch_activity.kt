@@ -24,7 +24,7 @@ class launch_activity : AppCompatActivity() {
         player1Name = findViewById(R.id.player1Name)
         player2Name = findViewById(R.id.player2Name)
         start = findViewById(R.id.startButton)
-        exit = findViewById(R.id.exitButton)
+        exit =findViewById(R.id.exitButton)
 
         start.setOnClickListener {
             val intent = Intent(this,MainActivity::class.java)
