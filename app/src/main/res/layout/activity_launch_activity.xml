@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:forceDarkAllowed="false"
+    tools:context=".launch_activity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/main_activity"
+        android:scaleType="fitXY" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tic Tac Toe"
+            android:fontFamily="@font/autumn"
+            android:textSize="48dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/player1Name"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_below="@+id/appTitle"
+            android:hint="Enter Name"
+            android:background="@drawable/custom_edit_text"
+            android:layout_centerHorizontal="true"
+            android:textColorHint="#C4C4C4"
+            android:layout_margin="20dp"
+            android:drawableStart="@drawable/x_icon"
+            android:drawablePadding="10dp"
+            android:padding="10dp"/>
+
+        <EditText
+            android:id="@+id/player2Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/player1Name"
+            android:hint="Enter Name"
+            android:background="@drawable/custom_edit_text"
+            android:layout_centerHorizontal="true"
+            android:textColorHint="#C4C4C4"
+            android:layout_margin="20dp"
+            android:drawableStart="@drawable/o_icon"
+            android:drawablePadding="10dp"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/player2Name"
+            android:background="@drawable/white_stroke_background"
+            android:text="Start"
+            android:textColor="@color/white"
+            android:padding="20dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/exitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/startButton"
+            android:background="@drawable/white_stroke_background"
+            android:text="Exit"
+            android:textColor="@color/white"
+            android:padding="20dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
