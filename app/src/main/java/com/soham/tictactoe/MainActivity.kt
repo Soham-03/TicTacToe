@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
                 var resourceId = resources.getIdentifier("ic_button${i}_x","drawable",packageName)
                 button.setImageResource(resourceId)
                 activePlayer = 1
-                winCheck[i] = 1
+                winCheck[i] = 0
                 count++
                 tapXMp.start()
                 button.isClickable = false
@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
                 var resourceId = resources.getIdentifier("ic_button${i}_o","drawable",packageName)
                 button.setImageResource(resourceId)
                 activePlayer = 0
-                winCheck[i] = 3
+                winCheck[i] = 1
                 count++
                 tapYMP.start()
                 button.isClickable = false
@@ -132,14 +132,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun checkWin(button:ImageView){
-        if((winCheck[0]==1 && winCheck[1]==1 && winCheck[2]==1) ||
-                (winCheck[3]==1 && winCheck[4]==1 && winCheck[5]==1) ||
-                (winCheck[6]==1 && winCheck[7]==1 && winCheck[8]==1) ||
-                (winCheck[0]==1 && winCheck[4]==1 && winCheck[8]==1) ||
-                (winCheck[2]==1 && winCheck[4]==1 && winCheck[6]==1) ||
-                (winCheck[0]==1 && winCheck[3]==1 && winCheck[6]==1) ||
-                (winCheck[1]==1 && winCheck[4]==1 && winCheck[7]==1) ||
-                (winCheck[2]==1 && winCheck[5]==1 && winCheck[8]==1)){
+        if((winCheck[0]==0 && winCheck[1]==0 && winCheck[2]==0) ||
+                (winCheck[3]==0 && winCheck[4]==0 && winCheck[5]==0) ||
+                (winCheck[6]==0 && winCheck[7]==0 && winCheck[8]==0) ||
+                (winCheck[0]==0 && winCheck[4]==0 && winCheck[8]==0) ||
+                (winCheck[2]==0 && winCheck[4]==0 && winCheck[6]==0) ||
+                (winCheck[0]==0 && winCheck[3]==0 && winCheck[6]==0) ||
+                (winCheck[1]==0 && winCheck[4]==0 && winCheck[7]==0) ||
+                (winCheck[2]==0 && winCheck[5]==0 && winCheck[8]==0)){
                     winnerMp.start()
 
             val dialog = AwesomeDialog.build(this)
@@ -159,14 +159,14 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Congratulations",Toast.LENGTH_SHORT).show()
 
         }
-        if((winCheck[0]==3 && winCheck[1]==3 && winCheck[2]==3) ||
-                (winCheck[3]==3 && winCheck[4]==3 && winCheck[5]==3) ||
-                (winCheck[6]==3 && winCheck[7]==3 && winCheck[8]==3) ||
-                (winCheck[0]==3 && winCheck[4]==3 && winCheck[8]==3) ||
-                (winCheck[2]==3 && winCheck[4]==3 && winCheck[6]==3) ||
-                (winCheck[0]==3 && winCheck[3]==3 && winCheck[6]==3) ||
-                (winCheck[1]==3 && winCheck[4]==3 && winCheck[7]==3) ||
-                (winCheck[2]==3 && winCheck[5]==3 && winCheck[8]==3)){
+        if((winCheck[0]==1 && winCheck[1]==1 && winCheck[2]==1) ||
+                (winCheck[3]==1 && winCheck[4]==1 && winCheck[5]==1) ||
+                (winCheck[6]==1 && winCheck[7]==1 && winCheck[8]==1) ||
+                (winCheck[0]==1 && winCheck[4]==1 && winCheck[8]==1) ||
+                (winCheck[2]==1 && winCheck[4]==1 && winCheck[6]==1) ||
+                (winCheck[0]==1 && winCheck[3]==1 && winCheck[6]==1) ||
+                (winCheck[1]==1 && winCheck[4]==1 && winCheck[7]==1) ||
+                (winCheck[2]==1 && winCheck[5]==1 && winCheck[8]==1)){
                     winnerMp.start()
 
             val dialog = AwesomeDialog.build(this)
